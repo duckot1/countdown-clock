@@ -1,0 +1,1 @@
+var Game={counting:!1,init:function(){this.gameButtonListeners()},gameButtonListeners:function(){$(document).on("keypress",function(n){49===n.keyCode?this.counting||(Timer.count(),this.counting=!0):50===n.keyCode?(Timer.stop(),this.counting=!1):51===n.keyCode&&(Timer.init(),this.counting=!1)})}};Game.init();
