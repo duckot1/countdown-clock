@@ -12,43 +12,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js" charset="utf-8"></script>
   </head>
   <body>
-    <div style="display: none" class="wrap">
+    <div class="leaderboard-border">
+
+    </div>
+    <div class="leaderboard">
+
+    </div>
+    <div id="timesup" class="wrap before-hide">
       <div class="complete">
         <div style="width:100%">
           <div style="margin: auto">
-            <h1>COMPLETE</h1>
+            <h1>TIME'S UP!</h1>
           </div>
         </div>
       </div>
     </div>
-    <div class="wrap">
-      <button type="button" name="startButton" id="start_timer">START</button>
-      <button type="button" name="startButton" id="stop_timer">STOP</button>
-      <button type="button" name="startButton" id="reset_timer">RESET</button>
+    <div id="loading" class="wrap hide">
+      <div class="complete">
+        <div class="loading-container">
+        <div class="loading-container-dot"></div>
+          <div style="margin: auto">
+            <h1>LEADERBOARD</h1>
+            <h2 class="loading">LOADING</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="clock" class="wrap">
       <div class="countdown">
 
         <div style="width:100%">
         <div style="margin: auto" class="bloc-time sec" data-init-value="30">
 
             <div class="figure sec sec-1">
-            <span class="top">3</span>
+            <span class="top"></span>
             <span class="top-back">
               <span>0</span>
             </span>
-            <span class="bottom">3</span>
+            <span class="bottom"></span>
             <span class="bottom-back">
               <span>0</span>
             </span>
           </div>
 
           <div class="figure sec sec-2">
-            <span class="top">0</span>
+            <span class="top"></span>
             <span class="top-back">
-              <span>0</span>
+              <span></span>
             </span>
-            <span class="bottom">0</span>
+            <span class="bottom"></span>
             <span class="bottom-back">
-              <span>0</span>
+              <span></span>
             </span>
           </div>
         </div>
@@ -56,6 +70,19 @@
       </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAHTn6zpYZhd0_cNgFj8GaMQSQUtWii5bc",
+        authDomain: "quiz-2018.firebaseapp.com",
+        databaseURL: "https://quiz-2018.firebaseio.com",
+        projectId: "quiz-2018",
+        storageBucket: "",
+        messagingSenderId: "849623997639"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="./clock.js" charset="utf-8"></script>
     <script src="./score.js" charset="utf-8"></script>
     <script src="./game.js" charset="utf-8"></script>

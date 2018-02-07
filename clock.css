@@ -5,11 +5,10 @@ body {
 .wrap {
   position: absolute;
   bottom: 0;
-  top: 0;
+  top: 42%;
   left: 0;
   right: 0;
-  margin: auto;
-  height: 310px;
+  height: auto;
 }
 
 a {
@@ -17,11 +16,20 @@ a {
   color: #1a1a1a;
 }
 
+.before-hide {
+  display: none;
+  top: 100%;
+  opacity: 0;
+}
+
+.hide {
+  display: none;
+}
+
 h1 {
   color: #fff;
-  margin-bottom: 60px;
   text-align: center;
-  font: 300 2.25em "Lato";
+  font: 300 1.75em "Lato";
   text-transform: uppercase;
 }
 h1 strong {
@@ -30,7 +38,7 @@ h1 strong {
 }
 
 h2 {
-  margin-bottom: 80px;
+  color: #fff;
   text-align: center;
   font: 300 0.7em "Lato";
   text-transform: uppercase;
@@ -171,4 +179,93 @@ h2 strong {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+
+
+.loading {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  width: 300px;
+  margin: auto;
+  transition: color 0.25s;
+  box-shadow: inset 0 0 0 2px transparent;
+  position: relative;
+  vertical-align: middle;
+}
+
+.loading::after, .loading::before {
+  border: 1px solid white;
+  width: 2px;
+  height: 2px;
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  margin-top: 5px;
+}
+
+
+
+@keyframes moveRight {
+  0% {
+    top: 100%;
+    left: 30%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 100%;
+    left: 70%;
+    opacity: 1;
+  }
+}
+@keyframes moveLeft {
+  0% {
+    top: 100%;
+    left: 70%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 100%;
+    left: 30%;
+    opacity: 1;
+  }
+}
+
+.loading::before {
+  animation: moveRight 1s linear infinite;
+}
+.loading::after {
+  animation: moveLeft 1s linear infinite;
+}
+
+.leaderboard {
+  position: absolute;
+  background-color: transparent;
+  top: 5.25em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.leaderboard-border {
+  left: 0;
+  position: absolute;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  height: 4.25em;
+  width: 0;
+}
+
+.border-cross {
+  animation: underline 1s linear forwards;
+}
+
+@keyFrames underline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }

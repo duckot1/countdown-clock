@@ -14,7 +14,7 @@ var Timer = {
     	seconds: this.$el.find('.bloc-time.sec .figure')
    	};
 
-    this.total_seconds = 10;
+    this.total_seconds = 2;
 
     // Init countdown values
     this.values = {
@@ -56,7 +56,7 @@ var Timer = {
         --that.total_seconds;
       } else {
         clearInterval(that.countdown_interval)
-        console.log('Countdown complete');
+        Game.gameOver()
       }
     }, 1000);
   },
